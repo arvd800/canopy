@@ -66,6 +66,10 @@ tidy:
 	@echo ">> Tidying modules..."
 	$(GO) mod tidy
 
+## check: run fmt, vet, and lint in sequence (handy pre-commit check)
+check: fmt vet lint
+	@echo ">> All checks passed."
+
 ## docker-build: build the Docker image
 docker-build:
 	@echo ">> Building Docker image..."
